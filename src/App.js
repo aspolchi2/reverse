@@ -1,9 +1,10 @@
-import "./App.css";
+import './app.scss'
 import { useState } from "react";
 import Palindromo from "./Palindromo";
+import { Input } from '@mui/material';
 
 function App() {
-  const [text, setText] = useState(" ");
+  const [text, setText] = useState("");
 
   const handleChange = (e) => {
     setText(e.target.value.split(" ").join(""));
@@ -11,13 +12,16 @@ function App() {
 
   return (
     <div className="App">
+    <div className='appWrapper'>
       <h1>Detector de palíndromos</h1>
-        <input
+        <Input
           placeholder="Checkea tu palíndromo aqui.."
           type="text"
           onChange={handleChange}
-        ></input>
+          className="inputCheck"
+        ></Input>
       <Palindromo text={text} />
+    </div>
     </div>
   );
 }
