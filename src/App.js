@@ -7,7 +7,7 @@ function App() {
   const [text, setText] = useState("");
 
   const handleChange = (e) => {
-    setText(e.target.value.split(" ").join(""));
+    setText(e.target.value.split(" ").join("").toLowerCase());
   };
 
   return (
